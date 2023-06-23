@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<odoo>
+
+	<record id="wizard_handle_xlsx_data_mixin_view" model="ir.ui.view">
+	    <field name="name">Handle XLSX Data</field>
+	    <field name="model">wizard.handle.xlsx.data.mixin</field>
+	    <field name="arch" type="xml">
+        	<form string="Upload XLSX File">
+	        	<sheet>
+		            <group>
+		           		<group>
+		           			<field name="input_file"/>
+		           		</group>
+		            </group>
+	        	</sheet>
+				<footer>
+					<button name="handle" string="Handle" type="object" class="btn-primary" />
+					<button string="Cancel" class="btn-secondary" special="cancel"/>
+					<span id="xlsx_file_format" class="text-left text-wartext-leftning"></span>
+				</footer>
+	         </form>
+	    </field>
+	</record>
+
+	<menuitem id="menu_tools_root" name="Import Tools" parent="base.menu_custom" sequence="31"/>
+
+</odoo>

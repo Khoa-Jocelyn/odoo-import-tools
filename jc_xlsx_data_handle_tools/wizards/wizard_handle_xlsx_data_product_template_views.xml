@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<odoo>
+
+	<record id="wizard_handle_xlsx_data_product_template_view" model="ir.ui.view">
+		<field name="name">Handle XLSX Product Template Data</field>
+		<field name="model">wizard.handle.xlsx.data.product.template</field>
+		<field name="inherit_id" ref="jc_xlsx_data_handle_tools.wizard_handle_xlsx_data_mixin_view" />
+		<field name="arch" type="xml">
+			<xpath expr="//span[@id='xlsx_file_format']" position="inside">
+				<a
+					href="/jc_xlsx_data_handle_tools/static/xlsx/product_template/file_template.xlsx"
+					class="ml4" download="file_template.xlsx">
+					<i class="fa fa-download mr4" />
+					file_template.xlsx
+				</a>
+			</xpath>
+		</field>
+	</record>
+
+	<record id="action_handle_xlsx_data_product_template" model="ir.actions.act_window">
+		<field name="name">Handle XLSX Product Template Data</field>
+		<field name="res_model">wizard.handle.xlsx.data.product.template</field>
+		<field name="view_mode">form</field>
+		<field name="view_id" ref="wizard_handle_xlsx_data_product_template_view"/>
+		<field name="target">new</field>
+	</record>
+
+	<menuitem id="menu_handle_xlsx_data_product_template"
+		name="Handle XLSX Product Template Data"
+		parent="jc_xlsx_data_handle_tools.menu_tools_root"
+		action="action_handle_xlsx_data_product_template" />
+
+</odoo>
